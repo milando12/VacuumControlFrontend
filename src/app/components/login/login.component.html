@@ -11,4 +11,5 @@
     </div>
     <button type="submit" [disabled]="!loginForm.valid">Login</button>
   </form>
+  <label *ngIf="error" class="error">{{error}}</label>
 </div>
