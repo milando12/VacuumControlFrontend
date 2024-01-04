@@ -6,7 +6,7 @@ import { AppComponent } from './components/app/app.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { DisplayusersComponent } from './components/displayusers/displayusers.component';
+import { DisplayUsersComponent } from './components/displayusers/display-users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 
@@ -14,7 +14,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    DisplayusersComponent,
+    DisplayUsersComponent,
     AddUserComponent,
     EditUserComponent
   ],

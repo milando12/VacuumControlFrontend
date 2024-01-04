@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./components/login/login.component";
-import {DisplayusersComponent} from "./components/displayusers/displayusers.component";
+import {DisplayUsersComponent} from "./components/displayusers/display-users.component";
 import {AddUserComponent} from "./components/add-user/add-user.component";
 import {EditUserComponent} from "./components/edit-user/edit-user.component";
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: "users",
-    component: DisplayusersComponent
+    component: DisplayUsersComponent
   },
   {
     path: "add-user",
