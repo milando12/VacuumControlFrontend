@@ -1,10 +1,4 @@
-export interface Post {
-  userId: number,
-  id: number,
-  title: string,
-  body: string
-}
-
+// example of class
 export class PostClass {
   constructor(public userId: number,
               public id: number,
@@ -15,6 +9,13 @@ export class PostClass {
   getTitle(){
     return this.title.toUpperCase();
   }
+}
+export interface User {
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+  permissions: string;
 }
 export interface LoginRequest {
   email: string;

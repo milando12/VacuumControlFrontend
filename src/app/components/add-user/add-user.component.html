@@ -1,0 +1,26 @@
+<div class="add-user-container">
+  <h2>Add User</h2>
+  <form (ngSubmit)="createUser()" #addUserForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="newUser.name" required>
+    </div>
+    <div class="form-group">
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" [(ngModel)]="newUser.surname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="newUser.email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required>
+    </div>
+    <div class="form-group">
+      <label for="permissions">Permissions:</label>
+      <input type="text" id="permissions" name="permissions" [(ngModel)]="newUser.permissions" required>
+    </div>
+    <button type="submit" [disabled]="!addUserForm.valid">Create</button>
+  </form>
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {LoginRequest} from "../../model";
 import {LoginServiceService} from "../../services/login-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
   password: string = '';
   error: string = '';
 
-  constructor(private loginService: LoginServiceService) { }
+  constructor(private loginService: LoginServiceService, private router:Router) { }
 
   // handle error
   // <label *ngIf="error" class="error">{{error}}</label>
@@ -27,10 +28,14 @@ export class LoginComponent {
         // console.log('Login response:', response);
         console.log('Token:', response.jwt);
         localStorage.setItem('umToken', response.jwt);
+        this.router.navigate(['users']);
       },
       (error) => {
         this.error = "Login failed";
         console.error('Login failed:', error);
+
+        //TODO For testing purposes, delete this line later
+        this.router.navigate(['users']);
       }
     );
 

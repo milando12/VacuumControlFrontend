@@ -1,0 +1,22 @@
+<div class="edit-user-container">
+  <h2>Edit User</h2>
+  <form (ngSubmit)="saveUser()" #editUserForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
+    </div>
+    <div class="form-group">
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" [(ngModel)]="user.surname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" readonly>
+    </div>
+    <div class="form-group">
+      <label for="permissions">Permissions:</label>
+      <input type="text" id="permissions" name="permissions" [(ngModel)]="user.permissions" required>
+    </div>
+    <button type="submit" [disabled]="!editUserForm.valid">Save</button>
+  </form>
+</div>
