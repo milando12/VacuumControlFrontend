@@ -46,7 +46,7 @@ export class LoginComponent {
         //TODO For testing purposes, delete this line later
         // admin JWT:
         // eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJwZXJtaXNzaW9ucyI6WyJjYW5fY3JlYXRlX3VzZXJzIiwiY2FuX3JlYWRfdXNlcnMiLCJjYW5fdXBkYXRlX3VzZXJzIiwiY2FuX2RlbGV0ZV91c2VycyJdLCJleHAiOjE3MDQ0MDg1MzEsImlhdCI6MTcwNDM3MjUzMX0.Qnw4Fc67urhl0cWhwGcrRf2zQRVHzINDX0ekHdJqScdTBV2gfx8_uWlQvSYGuQY3IqSwKADq0DBe8I22DkPygg
-        this.router.navigate(['users']);
+        // this.router.navigate(['users']);
       }
     );
   }

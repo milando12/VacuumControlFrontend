@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
       <label for="permissions">Permissions:</label>
-      <input type="text" id="permissions" name="permissions" [(ngModel)]="user.permissions" required>
+      <input type="text" id="permissions" name="permissions" [(ngModel)]="user.permissions">
     </div>
     <button type="submit" [disabled]="!editUserForm.valid">Save</button>
   </form>

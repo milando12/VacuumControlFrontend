@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {User} from "../../model";
+import {User, UserNoPassword} from "../../model";
 import {UserService} from "../../services/user.service";
 import {AuthService} from "../../services/auth.service";
 
@@ -10,7 +10,7 @@ import {AuthService} from "../../services/auth.service";
   styleUrls: ['./display-users.component.css']
 })
 export class DisplayUsersComponent implements OnInit {
-  users: User[] = [];
+  users: UserNoPassword[] = [];
 
   constructor(private router: Router, private userService: UserService, public auth:AuthService) {}
 
@@ -19,31 +19,36 @@ export class DisplayUsersComponent implements OnInit {
   }
 
   loadUsers() {
-    // this.userService.getUsers().subscribe(
-    //   (data) => {
-    //     this.users = data;
-    //   },
-    //   (error) => {
-    //     console.error('Error fetching users:', error);
-    //   }
-    // );
+    console.log("loadUsers");
+    this.userService.getUserList().subscribe(
+      (data) => {
+        this.users = data;
+        console.log("data", data);
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+      }
+    );
   }
 
   editUser(email: string) {
-    this.router.navigate(['/edit-user', email]);
+    console.log("editUser");
+    if (this.auth.userHasPermission('can_update_users')) {
+      this.router.navigate(['/edit-user', email]);
+    }
   }
 
   deleteUser(email: string) {
     if (confirm('Are you sure you want to delete this user?')) {
-      // this.userService.deleteUser(email).subscribe(
-      //   () => {
-      //     this.loadUsers();
-      //   },
-      //   (error) => {
-      //     console.error('Error deleting user:', error);
-      //     // Handle error and notify the user
-      //   }
-      // );
+      this.userService.deleteUser(email).subscribe(
+        () => {
+          this.loadUsers();
+          console.log("User deleted successfully");
+        },
+        (error) => {
+          console.error('Error deleting user:', error);
+        }
+      );
     }
   }
 

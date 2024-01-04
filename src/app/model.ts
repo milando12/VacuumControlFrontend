@@ -17,6 +17,13 @@ export interface User {
   password: string;
   permissions: string;
 }
+export interface UserNoPassword {
+  id: number;
+  name: string;
+  surname: string;
+  email: string;
+  permissions: string;
+}
 export interface LoginRequest {
   email: string;
   password: string;
