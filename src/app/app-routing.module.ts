@@ -4,6 +4,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {DisplayUsersComponent} from "./components/displayusers/display-users.component";
 import {AddUserComponent} from "./components/add-user/add-user.component";
 import {EditUserComponent} from "./components/edit-user/edit-user.component";
+import {AuthGuard} from "./auth.guard";
 
 const routes: Routes = [
   {
@@ -16,11 +17,13 @@ const routes: Routes = [
   },
   {
     path: "add-user",
-    component: AddUserComponent
+    component: AddUserComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: "edit-user",
-    component: EditUserComponent
+    path: "edit-user/:email",
+    component: EditUserComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
