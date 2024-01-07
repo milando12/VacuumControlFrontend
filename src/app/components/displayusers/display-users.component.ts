@@ -55,4 +55,8 @@ export class DisplayUsersComponent implements OnInit {
   goToAddUserPage() {
     this.router.navigate(['/add-user']);
   }
+
+  goToVacuumsPage(){
+    this.router.navigate(['/search']);
+  }
 }

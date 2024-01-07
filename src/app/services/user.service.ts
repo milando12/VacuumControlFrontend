@@ -12,10 +12,6 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // login(loginRequest: LoginRequest): Observable<LoginResponse> {
-  //   return this.httpClient.post<LoginResponse>(this.apiUrl, loginRequest);
-  // }
-
   getUserList(): Observable<UserNoPassword[]> {
     const token = localStorage.getItem('umToken');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);

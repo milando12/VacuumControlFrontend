@@ -31,6 +31,27 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   jwt: string;
-};
+}
+// models.ts
+
+export interface FilterRequest {
+  name?: string;
+  statuses?: string[];
+  dateFrom?: string;
+  dateTo?: string;
+}
+// models.ts
+
+export interface VacuumRequest {
+  id: number;
+  name: string;
+  status: string;
+  creationTime: string;
+}
+
+export interface VacuumError {
+  // Define VacuumError properties as needed
+}
+;
 
 

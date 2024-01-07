@@ -36,5 +36,7 @@
       </tbody>
     </table>
   </div>
-
+  <div class="view-vacuums-button">
+    <button (click)="goToVacuumsPage()" [disabled]="!(auth.userHasPermission('can_search_vacuum') || auth.userHasPermission('can_remove_vacuum') || auth.userHasPermission('can_add_vacuum') || auth.userHasPermission('can_discharge_vacuum') || auth.userHasPermission('can_stop_vacuum') || auth.userHasPermission('can_start_vacuum'))">Vacuums</button>
+  </div>
 </div>

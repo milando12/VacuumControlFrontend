@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DisplayUsersComponent } from './components/displayusers/display-users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { SearchVacuumsComponent } from './components/search-vacuums/search-vacuums.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     LoginComponent,
     DisplayUsersComponent,
     AddUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    SearchVacuumsComponent,
   ],
   imports: [
     BrowserModule,

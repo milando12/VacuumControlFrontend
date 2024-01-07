@@ -1,0 +1,35 @@
+<div class="search-container">
+  <h2>Search Vacuums</h2>
+  <div class="search-form">
+    <input type="text" placeholder="Search by Name" [(ngModel)]="searchName" />
+    <div class="status-checkboxes">
+      <label><input type="checkbox" [(ngModel)]="statusFilters.RUNNING" /> RUNNING</label>
+      <label><input type="checkbox" [(ngModel)]="statusFilters.STOPPED" /> STOPPED</label>
+      <label><input type="checkbox" [(ngModel)]="statusFilters.DISCHARGING" /> DISCHARGING</label>
+    </div>
+    <input type="text" placeholder="Date From (YYYY-MM-DD)" [(ngModel)]="dateFrom" />
+    <input type="text" placeholder="Date To (YYYY-MM-DD)" [(ngModel)]="dateTo" />
+    <button (click)="searchVacuums()">Search</button>
+  </div>
+  <input type="text" placeholder="Vacuum Name" [(ngModel)]="newVacuumName" />
+  <button *ngIf="auth.userHasPermission('can_add_vacuum')" (click)="addVacuum()">Add Vacuum</button>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Creation Time</th>
+    <th>Remove</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let vacuum of vacuums">
+    <td><a [routerLink]="['/schedule-operations', vacuum.id]">{{ vacuum.name }}</a></td>
+    <td>{{ vacuum.status }}</td>
+    <td>{{ vacuum.creationTime }}</td>
+    <td><button [disabled]="!auth.userHasPermission('can_remove_vacuum')" (click)="removeVacuum(vacuum.id)">Remove</button></td>
+  </tr>
+  </tbody>
+</table>

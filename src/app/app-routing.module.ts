@@ -5,6 +5,7 @@ import {DisplayUsersComponent} from "./components/displayusers/display-users.com
 import {AddUserComponent} from "./components/add-user/add-user.component";
 import {EditUserComponent} from "./components/edit-user/edit-user.component";
 import {AuthGuard} from "./auth.guard";
+import {SearchVacuumsComponent} from "./components/search-vacuums/search-vacuums.component";
 
 const routes: Routes = [
   {
@@ -24,6 +25,15 @@ const routes: Routes = [
     path: "edit-user/:email",
     component: EditUserComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "search",
+    component: SearchVacuumsComponent
+  },
+  //TODO change when components are ready
+  {
+    path: "schedule-operations",
+    component: SearchVacuumsComponent
   }
 ];
 
