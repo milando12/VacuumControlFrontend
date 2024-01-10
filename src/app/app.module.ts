@@ -11,6 +11,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { SearchVacuumsComponent } from './components/search-vacuums/search-vacuums.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
     EditUserComponent,
     SearchVacuumsComponent,
     ScheduleComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

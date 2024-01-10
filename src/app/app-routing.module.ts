@@ -7,6 +7,7 @@ import {EditUserComponent} from "./components/edit-user/edit-user.component";
 import {AuthGuard} from "./auth.guard";
 import {SearchVacuumsComponent} from "./components/search-vacuums/search-vacuums.component";
 import {ScheduleComponent} from "./components/schedule/schedule.component";
+import {ErrorComponent} from "./components/error/error.component";
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: "schedule/:id",
     component: ScheduleComponent,
+  },
+  {
+    path: "error",
+    component: ErrorComponent,
   }
 ];
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {FilterRequest, ScheduleResponse, VacuumRequest} from "../model";
+import {FilterRequest, ScheduleResponse, VacuumRequest, Error} from "../model";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -64,5 +64,11 @@ export class VacuumService {
     return this.httpClient.post(`${this.baseUrl}/schedule/${vacuumId}`, scheduleRequest, { headers });
   }
 
+  getAllVacuumErrors(): Observable<Error[]> {
+    const token = localStorage.getItem('umToken');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.httpClient.get<Error[]>(`${this.baseUrl}/errors`, { headers });
+  }
 
 }

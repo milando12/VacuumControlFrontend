@@ -1,0 +1,21 @@
+<div class="error-container">
+  <h2>Error History</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Message</th>
+      <th>Operation</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let error of errors">
+      <td>{{ error.id }}</td>
+      <td>{{ error.message }}</td>
+      <td>{{ error.operation }}</td>
+      <td>{{ error.date }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

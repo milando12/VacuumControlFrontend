@@ -101,4 +101,8 @@ export class SearchVacuumsComponent implements OnInit {
       );
   }
 
+  goToErrorsPage(){
+    this.router.navigate(['/error']);
+  }
+
 }
