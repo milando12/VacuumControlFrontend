@@ -52,6 +52,10 @@ export interface VacuumRequest {
 export interface VacuumError {
   // Define VacuumError properties as needed
 }
+export interface ScheduleResponse {
+  scheduledTime:string; // "yyyy-MM-dd HH:mm:ss"
+  operation:string;
+}
 ;
 
 

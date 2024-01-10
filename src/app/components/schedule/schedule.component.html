@@ -1,0 +1,11 @@
+<div class="schedule-container">
+  <h2>Schedule Operation</h2>
+  <div class="schedule-form">
+    <label for="scheduledTime">Scheduled Time:</label>
+    <input type="text" id="scheduledTime" [(ngModel)]="scheduledTime" />
+
+    <button *ngIf="auth.userHasPermission('can_start_vacuum')" [disabled]="!auth.userHasPermission('can_start_vacuum')" (click)="scheduleOperation('START')">Start</button>
+    <button *ngIf="auth.userHasPermission('can_stop_vacuum')" [disabled]="!auth.userHasPermission('can_stop_vacuum')" (click)="scheduleOperation('STOP')">Stop</button>
+    <button *ngIf="auth.userHasPermission('can_discharge_vacuum')" [disabled]="!auth.userHasPermission('can_discharge_vacuum')" (click)="scheduleOperation('DISCHARGE')">Discharge</button>
+  </div>
+</div>

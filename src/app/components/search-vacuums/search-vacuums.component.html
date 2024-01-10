@@ -21,15 +21,22 @@
     <th>Name</th>
     <th>Status</th>
     <th>Creation Time</th>
+    <th>Actions</th>
     <th>Remove</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let vacuum of vacuums">
-    <td><a [routerLink]="['/schedule-operations', vacuum.id]">{{ vacuum.name }}</a></td>
+    <td><a [routerLink]="['/schedule', vacuum.id]">{{ vacuum.name }}</a></td>
     <td>{{ vacuum.status }}</td>
     <td>{{ vacuum.creationTime }}</td>
+    <td>
+      <button *ngIf="auth.userHasPermission('can_start_vacuum')" [disabled]="vacuum.status !== 'STOPPED'" (click)="startVacuum(vacuum.id)">START</button>
+      <button *ngIf="auth.userHasPermission('can_stop_vacuum')" [disabled]="vacuum.status !== 'RUNNING'" (click)="stopVacuum(vacuum.id)">STOP</button>
+      <button *ngIf="auth.userHasPermission('can_discharge_vacuum')" [disabled]="vacuum.status !== 'STOPPED'" (click)="dischargeVacuum(vacuum.id)">DISCHARGE</button>
+    </td>
     <td><button [disabled]="!auth.userHasPermission('can_remove_vacuum')" (click)="removeVacuum(vacuum.id)">Remove</button></td>
   </tr>
   </tbody>
 </table>
+

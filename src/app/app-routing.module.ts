@@ -6,6 +6,7 @@ import {AddUserComponent} from "./components/add-user/add-user.component";
 import {EditUserComponent} from "./components/edit-user/edit-user.component";
 import {AuthGuard} from "./auth.guard";
 import {SearchVacuumsComponent} from "./components/search-vacuums/search-vacuums.component";
+import {ScheduleComponent} from "./components/schedule/schedule.component";
 
 const routes: Routes = [
   {
@@ -30,10 +31,9 @@ const routes: Routes = [
     path: "search",
     component: SearchVacuumsComponent
   },
-  //TODO change when components are ready
   {
-    path: "schedule-operations",
-    component: SearchVacuumsComponent
+    path: "schedule/:id",
+    component: ScheduleComponent,
   }
 ];
 

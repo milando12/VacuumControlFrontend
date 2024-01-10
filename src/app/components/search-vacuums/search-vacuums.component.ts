@@ -61,5 +61,44 @@ export class SearchVacuumsComponent implements OnInit {
       );
   }
 
+//  Start, stop, and discharge vacuum
+  startVacuum(vacuumId: number): void {
+    this.vacuumService.startVacuum(vacuumId)
+      .subscribe(
+        (result) => {
+          // Handle success if needed
+          console.log('Vacuum started successfully');
+        },
+        (error) => {
+          console.error('Error starting vacuum:', error);
+        }
+      );
+  }
+
+  stopVacuum(vacuumId: number): void {
+    this.vacuumService.stopVacuum(vacuumId)
+      .subscribe(
+        (result) => {
+          // Handle success if needed
+          console.log('Vacuum stopped successfully');
+        },
+        (error) => {
+          console.error('Error stopping vacuum:', error);
+        }
+      );
+  }
+
+  dischargeVacuum(vacuumId: number): void {
+    this.vacuumService.dischargeVacuum(vacuumId)
+      .subscribe(
+        (result) => {
+          // Handle success if needed
+          console.log('Vacuum discharged successfully');
+        },
+        (error) => {
+          console.error('Error discharging vacuum:', error);
+        }
+      );
+  }
 
 }

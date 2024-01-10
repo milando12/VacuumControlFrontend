@@ -10,6 +10,7 @@ import { DisplayUsersComponent } from './components/displayusers/display-users.c
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { SearchVacuumsComponent } from './components/search-vacuums/search-vacuums.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SearchVacuumsComponent } from './components/search-vacuums/search-vacuu
     AddUserComponent,
     EditUserComponent,
     SearchVacuumsComponent,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
